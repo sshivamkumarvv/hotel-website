@@ -160,3 +160,57 @@ body {
 .shimmer-btn:hover::after {
   transform: skewX(-25deg) translateX(250%);
 }
+
+/* Modal Popup & Bottom Sheet Animations */
+@keyframes modalOverlayFade {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    opacity: 1;
+    backdrop-filter: blur(8px);
+  }
+}
+
+@keyframes modalSheetSlideUpMobile {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modalDialogPopDesktop {
+  0% {
+    opacity: 0;
+    transform: scale(0.92) translateY(24px);
+  }
+  50% {
+    transform: scale(1.01) translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal-backdrop {
+  animation: modalOverlayFade 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-modal-card {
+  animation: modalSheetSlideUpMobile 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@media (min-width: 640px) {
+  .animate-modal-card {
+    animation: modalDialogPopDesktop 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}

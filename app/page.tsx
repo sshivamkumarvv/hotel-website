@@ -32,6 +32,7 @@ import {
 import { openBookingModal } from '@/lib/booking';
 import { RESORT_CONFIG } from '@/lib/constants';
 import { submitInquiry } from '@/lib/googleSheet';
+import GuestReviews from '@/components/GuestReviews';
 
 export default function HomePage() {
   const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
@@ -595,8 +596,11 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* 6.5 SECTION: VERIFIED GOOGLE GUEST REVIEWS */}
+      <GuestReviews />
+
       {/* 7. SECTION: BOOK YOUR STAY */}
-      <section className="py-20 sm:py-24 bg-white border-t border-amber-900/10 reveal-on-scroll" id="booking">
+      <section className="pt-10 sm:pt-14 pb-20 sm:pb-24 bg-white border-t border-amber-900/10" id="booking">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-xl mx-auto mb-14">
